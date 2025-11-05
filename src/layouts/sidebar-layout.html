@@ -14,7 +14,7 @@
 
   <div class="flex h-screen">
     <!-- Sidebar -->
-    <aside class="sidebar w-64 glass-panel border-r border-glass-dark-border flex-shrink-0 overflow-y-auto scrollbar-thin">
+    <aside class="sidebar w-64 glass-panel border-r border-border-dark flex-shrink-0 overflow-y-auto scrollbar-thin">
       <div class="p-6">
         <!-- Logo -->
         <a href="/" class="flex items-center space-x-2 mb-8">
@@ -28,9 +28,9 @@
         <nav class="space-y-6">
           <!-- Main Section -->
           <div>
-            <p class="text-xs text-text-dark-inactive uppercase tracking-wider mb-3 px-3">Main</p>
+            <p class="text-xs text-inactive-dark uppercase tracking-wider mb-3 px-3">Main</p>
             <div class="space-y-1">
-              <a href="/" class="menu-item bg-glass-dark-hover">
+              <a href="/" class="menu-item bg-hover-menu-dark">
                 <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
                 </svg>
@@ -59,7 +59,7 @@
 
           <!-- Management Section -->
           <div>
-            <p class="text-xs text-text-dark-inactive uppercase tracking-wider mb-3 px-3">Management</p>
+            <p class="text-xs text-inactive-dark uppercase tracking-wider mb-3 px-3">Management</p>
             <div class="space-y-1">
               <a href="/src/pages/user/users-list.html" class="menu-item">
                 <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -90,7 +90,7 @@
 
           <!-- Apps Section -->
           <div>
-            <p class="text-xs text-text-dark-inactive uppercase tracking-wider mb-3 px-3">Apps</p>
+            <p class="text-xs text-inactive-dark uppercase tracking-wider mb-3 px-3">Apps</p>
             <div class="space-y-1">
               <a href="/src/pages/productivity/calendar.html" class="menu-item">
                 <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -126,12 +126,12 @@
         <div class="mt-8 glass-card p-4">
           <div class="flex items-center justify-between mb-2">
             <p class="text-sm font-medium">Storage</p>
-            <span class="text-xs text-text-dark-inactive">70%</span>
+            <span class="text-xs text-inactive-dark">70%</span>
           </div>
-          <div class="w-full bg-glass-dark-border rounded-full h-2 mb-2">
+          <div class="w-full bg-border-dark rounded-full h-2 mb-2">
             <div class="bg-primary-500 h-2 rounded-full" style="width: 70%"></div>
           </div>
-          <p class="text-xs text-text-dark-inactive">7 GB of 10 GB used</p>
+          <p class="text-xs text-inactive-dark">7 GB of 10 GB used</p>
           <button class="btn btn-primary btn-sm w-full mt-3">Upgrade</button>
         </div>
       </div>
@@ -140,10 +140,10 @@
     <!-- Main Content Area -->
     <div class="flex-1 flex flex-col overflow-hidden">
       <!-- Top Header -->
-      <header class="glass-panel border-b border-glass-dark-border px-6 py-4 flex items-center justify-between flex-shrink-0">
+      <header class="glass-panel border-b border-border-dark px-6 py-4 flex items-center justify-between flex-shrink-0">
         <!-- Left: Breadcrumbs & Search -->
         <div class="flex items-center space-x-4 flex-1">
-          <button class="mobile-menu-toggle lg:hidden p-2 hover:bg-glass-dark-hover rounded-lg transition-colors">
+          <button class="mobile-menu-toggle lg:hidden p-2 hover:bg-hover-menu-dark rounded-lg transition-colors">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
             </svg>
@@ -156,7 +156,7 @@
         <!-- Right: Notifications & Profile -->
         <div class="flex items-center space-x-4">
           <!-- Notifications -->
-          <button class="relative p-2 hover:bg-glass-dark-hover rounded-lg transition-colors">
+          <button class="relative p-2 hover:bg-hover-menu-dark rounded-lg transition-colors">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
             </svg>
@@ -164,7 +164,7 @@
           </button>
 
           <!-- Theme Toggle -->
-          <button class="theme-toggle p-2 hover:bg-glass-dark-hover rounded-lg transition-colors">
+          <button class="theme-toggle p-2 hover:bg-hover-menu-dark rounded-lg transition-colors">
             <svg class="w-6 h-6 fill-[#ffce45] stroke-[#ffce45]" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none">
               <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
             </svg>
@@ -172,7 +172,7 @@
 
           <!-- Profile -->
           <div class="relative">
-            <button class="flex items-center space-x-2 p-1 hover:bg-glass-dark-hover rounded-lg transition-colors">
+            <button class="flex items-center space-x-2 p-1 hover:bg-hover-menu-dark rounded-lg transition-colors">
               <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400" alt="Profile" class="avatar avatar-sm">
               <span class="hidden md:block text-sm font-medium">John Doe</span>
             </button>

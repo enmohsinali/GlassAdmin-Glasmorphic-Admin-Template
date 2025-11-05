@@ -9,26 +9,30 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
-      // Custom Glassmorphic Colors - iOS 26 Liquid Glass Inspired
+      // Custom Glassmorphic Colors - Matching Reference Design
       colors: {
-        // Glass theme colors
-        glass: {
-          // Dark mode glass colors
-          'dark-bg': 'rgba(16, 18, 27, 0.4)',
-          'dark-bg-solid': '#10121b',
-          'dark-card': 'rgba(22, 25, 37, 0.6)',
-          'dark-border': 'rgba(113, 119, 144, 0.25)',
-          'dark-hover': 'rgba(12, 15, 25, 0.5)',
-          'dark-overlay': 'rgba(36, 39, 59, 0.8)',
-
-          // Light mode glass colors
-          'light-bg': 'rgba(255, 255, 255, 0.31)',
-          'light-bg-solid': '#ffffff',
-          'light-card': 'rgba(255, 255, 255, 0.45)',
-          'light-border': 'rgba(255, 255, 255, 0.35)',
-          'light-hover': 'rgba(255, 255, 255, 0.55)',
-          'light-overlay': 'rgba(255, 255, 255, 0.3)',
-        },
+        // Dark mode colors
+        'theme-dark-bg': 'rgba(16, 18, 27, 0.4)',
+        'theme-light-bg': 'rgba(255, 255, 255, 0.31)',
+        'border-dark': 'rgba(113, 119, 144, 0.25)',
+        'border-light': 'rgba(255, 255, 255, 0.35)',
+        'inactive-dark': 'rgba(113, 119, 144, 0.78)',
+        'inactive-light': '#333333',
+        'content-bg-dark': 'rgba(146, 151, 179, 0.13)',
+        'hover-menu-dark': 'rgba(12, 15, 25, 0.3)',
+        'hover-menu-light': 'rgba(255, 255, 255, 0.35)',
+        'dropdown-dark': '#21242d',
+        'dropdown-light': '#f7f7f7',
+        'dropdown-hover-dark': 'rgb(42, 46, 60)',
+        'dropdown-hover-light': 'rgb(236, 236, 236)',
+        'popup-dark': 'rgb(22, 25, 37)',
+        'popup-light': 'rgb(255, 255, 255)',
+        'search-dark': '#14162b',
+        'search-light': 'rgba(255, 255, 255, 0.31)',
+        'overlay-dark': 'rgba(36, 39, 59, 0.3)',
+        'overlay-light': 'rgba(255, 255, 255, 0.3)',
+        'scrollbar-dark': 'rgba(1, 2, 3, 0.4)',
+        'scrollbar-light': 'rgba(255, 253, 253, 0.57)',
 
         // Accent colors
         primary: {
@@ -75,25 +79,6 @@ export default {
           'light-secondary': 'rgba(51, 51, 51, 0.78)',
           'light-inactive': 'rgba(0, 0, 0, 0.45)',
         },
-
-        // Gradient colors (for hero sections and cards)
-        gradient: {
-          purple: {
-            from: '#cf4af3',
-            via: '#e73bd7',
-            to: '#fd31a2',
-          },
-          blue: {
-            from: '#4a90e2',
-            via: '#357abd',
-            to: '#1e5ba8',
-          },
-          orange: {
-            from: '#ff8c51',
-            via: '#ff705c',
-            to: '#f96057',
-          },
-        },
       },
 
       // Custom fonts
@@ -104,10 +89,7 @@ export default {
 
       // Custom backdrop blur values
       backdropBlur: {
-        xs: '2px',
         '20': '20px',
-        '30': '30px',
-        '40': '40px',
       },
 
       // Custom border radius for glass panels
@@ -189,21 +171,9 @@ export default {
     },
   },
   plugins: [
-    // Custom plugin for glass utilities
-    function({ addUtilities, theme }) {
+    // Custom plugin for utilities
+    function({ addUtilities }) {
       const newUtilities = {
-        '.glass-effect': {
-          backdropFilter: 'blur(20px) saturate(180%)',
-          WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-        },
-        '.glass-effect-light': {
-          backdropFilter: 'blur(30px) saturate(200%)',
-          WebkitBackdropFilter: 'blur(30px) saturate(200%)',
-        },
-        '.glass-effect-heavy': {
-          backdropFilter: 'blur(40px) saturate(160%)',
-          WebkitBackdropFilter: 'blur(40px) saturate(160%)',
-        },
         '.text-gradient': {
           backgroundClip: 'text',
           WebkitBackgroundClip: 'text',
