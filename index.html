@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlassAdmin - Liquid Glass UI Dashboard Template</title>
+
+  <!-- Meta Tags -->
+  <meta name="description" content="GlassAdmin - Next-generation admin dashboard template with Liquid Glass UI, built with Tailwind CSS and jQuery">
+  <meta name="keywords" content="admin, dashboard, template, glassmorphism, tailwind, jquery, liquid glass">
+  <meta name="author" content="Your Company / Team Name">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/src/assets/css/main.css">
+</head>
+<body class="bg-cover bg-center bg-fixed">
+
+  <!-- Video Background -->
+  <div class="video-bg fixed right-0 top-0 w-full h-full -z-10 opacity-50">
+    <video class="w-full h-full object-cover" autoplay loop muted>
+      <source src="https://assets.codepen.io/3364143/7btrrd.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Main Container -->
+  <div class="flex flex-col min-h-screen items-center justify-center p-8 relative z-10">
+
+    <!-- Hero Section -->
+    <div class="glass-card p-12 max-w-4xl w-full text-center animate-fade-in">
+      <!-- Logo -->
+      <div class="w-20 h-20 rounded-2xl bg-gradient-purple flex items-center justify-center mx-auto mb-6 animate-scale-in">
+        <span class="text-white font-bold text-4xl">G</span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="text-5xl md:text-6xl font-bold mb-4 animate-slide-up">
+        GlassAdmin
+      </h1>
+      <p class="text-2xl text-text-dark-secondary mb-8 animate-slide-up" style="animation-delay: 0.1s;">
+        Liquid Glass UI Dashboard Template
+      </p>
+
+      <!-- Description -->
+      <p class="text-lg text-text-dark-secondary mb-12 max-w-2xl mx-auto animate-slide-up" style="animation-delay: 0.2s;">
+        A next-generation admin dashboard template featuring Liquid Glass UI, fusing glassmorphism, minimalism,
+        and fluid motion inspired by modern design systems.
+      </p>
+
+      <!-- Feature Highlights -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 text-left">
+        <div class="glass-card p-6 animate-slide-up" style="animation-delay: 0.3s;">
+          <div class="w-12 h-12 rounded-lg bg-primary-500 bg-opacity-20 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Beautiful Design</h3>
+          <p class="text-sm text-text-dark-secondary">Glassmorphic UI with depth, translucency, and luminous gradients</p>
+        </div>
+
+        <div class="glass-card p-6 animate-slide-up" style="animation-delay: 0.4s;">
+          <div class="w-12 h-12 rounded-lg bg-success bg-opacity-20 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">High Performance</h3>
+          <p class="text-sm text-text-dark-secondary">Optimized with Vite, tree-shaking, and lazy loading</p>
+        </div>
+
+        <div class="glass-card p-6 animate-slide-up" style="animation-delay: 0.5s;">
+          <div class="w-12 h-12 rounded-lg bg-warning bg-opacity-20 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Fully Customizable</h3>
+          <p class="text-sm text-text-dark-secondary">Built with Tailwind CSS for easy customization</p>
+        </div>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 animate-slide-up" style="animation-delay: 0.6s;">
+        <a href="/src/layouts/sidebar-layout.html" class="btn btn-primary btn-lg flex items-center">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+          </svg>
+          View Dashboard
+        </a>
+        <a href="#demos" class="btn btn-secondary btn-lg flex items-center">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+          </svg>
+          Browse Demos
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-glass-dark-border">
+        <div class="text-center">
+          <div class="text-3xl font-bold text-primary-500 mb-1">24+</div>
+          <div class="text-sm text-text-dark-inactive">Pages</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-success mb-1">50+</div>
+          <div class="text-sm text-text-dark-inactive">Components</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-warning mb-1">7+</div>
+          <div class="text-sm text-text-dark-inactive">Libraries</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-danger mb-1">100%</div>
+          <div class="text-sm text-text-dark-inactive">Responsive</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div id="demos" class="mt-12 max-w-6xl w-full">
+      <h2 class="text-3xl font-bold text-center mb-8">Explore Dashboards</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Analytics Dashboard -->
+        <a href="/src/pages/dashboard/analytics.html" class="glass-card p-6 hover:scale-105 transition-transform">
+          <div class="w-12 h-12 rounded-lg gradient-purple flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Analytics Dashboard</h3>
+          <p class="text-sm text-text-dark-secondary">Track metrics, KPIs, and business insights</p>
+        </a>
+
+        <!-- E-commerce Dashboard -->
+        <a href="/src/pages/dashboard/ecommerce.html" class="glass-card p-6 hover:scale-105 transition-transform">
+          <div class="w-12 h-12 rounded-lg gradient-orange flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">E-commerce Dashboard</h3>
+          <p class="text-sm text-text-dark-secondary">Manage products, orders, and sales</p>
+        </a>
+
+        <!-- CRM Dashboard -->
+        <a href="/src/pages/dashboard/crm.html" class="glass-card p-6 hover:scale-105 transition-transform">
+          <div class="w-12 h-12 rounded-lg gradient-blue flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">CRM Dashboard</h3>
+          <p class="text-sm text-text-dark-secondary">Manage customers and relationships</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Theme Toggle (Fixed) -->
+  <button class="theme-toggle fixed bottom-6 right-6 w-12 h-12 rounded-full glass-panel shadow-glass-lg flex items-center justify-center z-50 hover:scale-110 transition-transform">
+    <svg class="w-6 h-6 fill-[#ffce45] stroke-[#ffce45]" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none">
+      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+    </svg>
+  </button>
+
+  <!-- Scripts -->
+  <script type="module" src="/src/assets/js/main.js"></script>
+</body>
+</html>

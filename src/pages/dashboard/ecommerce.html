@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce Dashboard - GlassAdmin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="/src/assets/css/main.css">
+</head>
+<body class="bg-cover bg-center bg-fixed overflow-hidden">
+
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <aside class="sidebar w-64 glass-panel border-r border-glass-dark-border flex-shrink-0 overflow-y-auto scrollbar-thin">
+      <div class="p-6">
+        <a href="/" class="flex items-center space-x-2 mb-8">
+          <div class="w-10 h-10 rounded-lg bg-gradient-purple flex items-center justify-center">
+            <span class="text-white font-bold text-xl">G</span>
+          </div>
+          <span class="text-xl font-bold">GlassAdmin</span>
+        </a>
+
+        <nav class="space-y-6">
+          <div>
+            <p class="text-xs text-text-dark-inactive uppercase tracking-wider mb-3 px-3">Main</p>
+            <div class="space-y-1">
+              <a href="/" class="menu-item">
+                <i class="fas fa-home w-5 mr-3"></i>
+                Dashboard
+              </a>
+              <a href="/src/pages/dashboard/analytics.html" class="menu-item">
+                <i class="fas fa-chart-line w-5 mr-3"></i>
+                Analytics
+              </a>
+              <a href="/src/pages/dashboard/ecommerce.html" class="menu-item bg-glass-dark-hover">
+                <i class="fas fa-shopping-cart w-5 mr-3"></i>
+                E-commerce
+              </a>
+              <a href="/src/pages/dashboard/crm.html" class="menu-item">
+                <i class="fas fa-users w-5 mr-3"></i>
+                CRM
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-xs text-text-dark-inactive uppercase tracking-wider mb-3 px-3">Management</p>
+            <div class="space-y-1">
+              <a href="/src/pages/user/users-list.html" class="menu-item">
+                <i class="fas fa-user-friends w-5 mr-3"></i>
+                Users
+              </a>
+              <a href="/src/pages/product/products-list.html" class="menu-item">
+                <i class="fas fa-box w-5 mr-3"></i>
+                Products
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col overflow-hidden">
+      <!-- Header -->
+      <header class="glass-panel border-b border-glass-dark-border px-6 py-4 flex items-center justify-between flex-shrink-0">
+        <div class="flex items-center space-x-4">
+          <h1 class="text-2xl font-bold">E-commerce Dashboard</h1>
+        </div>
+        <div class="flex items-center space-x-4">
+          <button class="relative p-2 hover:bg-glass-dark-hover rounded-lg transition-colors">
+            <i class="fas fa-bell text-xl"></i>
+            <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-danger rounded-full"></span>
+          </button>
+          <button class="theme-toggle p-2 hover:bg-glass-dark-hover rounded-lg transition-colors">
+            <svg class="w-6 h-6 fill-[#ffce45] stroke-[#ffce45]" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+            </svg>
+          </button>
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400" alt="Profile" class="avatar avatar-sm">
+        </div>
+      </header>
+
+      <!-- Content -->
+      <main class="flex-1 overflow-auto p-6 scrollbar-thin space-y-6">
+        <!-- Stats Cards Row -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Total Sales -->
+          <div class="glass-card p-6">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-text-dark-secondary text-xs uppercase tracking-wider mb-1">Total Sales</p>
+                <h2 class="text-3xl font-bold">$124,563</h2>
+                <div class="flex items-center mt-2 text-sm">
+                  <span class="text-success flex items-center">
+                    <i class="fas fa-arrow-up mr-1"></i>
+                    15.3%
+                  </span>
+                  <span class="text-text-dark-inactive ml-2">vs last week</span>
+                </div>
+              </div>
+              <div class="w-12 h-12 rounded-full gradient-purple flex items-center justify-center">
+                <i class="fas fa-dollar-sign text-white text-xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Total Orders -->
+          <div class="glass-card p-6">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-text-dark-secondary text-xs uppercase tracking-wider mb-1">Total Orders</p>
+                <h2 class="text-3xl font-bold">3,847</h2>
+                <div class="flex items-center mt-2 text-sm">
+                  <span class="text-success flex items-center">
+                    <i class="fas fa-arrow-up mr-1"></i>
+                    8.1%
+                  </span>
+                  <span class="text-text-dark-inactive ml-2">vs last week</span>
+                </div>
+              </div>
+              <div class="w-12 h-12 rounded-full gradient-orange flex items-center justify-center">
+                <i class="fas fa-shopping-bag text-white text-xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Products -->
+          <div class="glass-card p-6">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-text-dark-secondary text-xs uppercase tracking-wider mb-1">Products</p>
+                <h2 class="text-3xl font-bold">1,245</h2>
+                <div class="flex items-center mt-2 text-sm">
+                  <span class="text-warning flex items-center">
+                    <i class="fas fa-exclamation-triangle mr-1"></i>
+                    12 Low Stock
+                  </span>
+                </div>
+              </div>
+              <div class="w-12 h-12 rounded-full gradient-blue flex items-center justify-center">
+                <i class="fas fa-box text-white text-xl"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Customers -->
+          <div class="glass-card p-6">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-text-dark-secondary text-xs uppercase tracking-wider mb-1">Customers</p>
+                <h2 class="text-3xl font-bold">8,456</h2>
+                <div class="flex items-center mt-2 text-sm">
+                  <span class="text-success flex items-center">
+                    <i class="fas fa-arrow-up mr-1"></i>
+                    6.8%
+                  </span>
+                  <span class="text-text-dark-inactive ml-2">vs last week</span>
+                </div>
+              </div>
+              <div class="w-12 h-12 rounded-full bg-success bg-opacity-20 flex items-center justify-center">
+                <i class="fas fa-users text-success text-xl"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sales & Revenue Charts -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Sales Overview -->
+          <div class="glass-card p-6 lg:col-span-2">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-lg font-semibold">Sales Overview</h3>
+              <div class="flex items-center space-x-2">
+                <button class="text-xs text-text-dark-inactive hover:text-text-dark-primary">Day</button>
+                <button class="text-xs text-text-dark-inactive hover:text-text-dark-primary">Week</button>
+                <button class="text-xs text-primary-500">Month</button>
+                <button class="text-xs text-text-dark-inactive hover:text-text-dark-primary">Year</button>
+              </div>
+            </div>
+            <div id="sales-overview-chart" class="h-80"></div>
+          </div>
+
+          <!-- Revenue by Category -->
+          <div class="glass-card p-6">
+            <h3 class="text-lg font-semibold mb-4">Revenue by Category</h3>
+            <div id="revenue-category-chart" class="h-64"></div>
+            <div class="space-y-3 mt-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                  <div class="w-3 h-3 rounded-full bg-primary-500 mr-2"></div>
+                  <span class="text-sm">Electronics</span>
+                </div>
+                <span class="text-sm font-semibold">$45,230</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                  <div class="w-3 h-3 rounded-full bg-success mr-2"></div>
+                  <span class="text-sm">Fashion</span>
+                </div>
+                <span class="text-sm font-semibold">$32,160</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                  <div class="w-3 h-3 rounded-full bg-warning mr-2"></div>
+                  <span class="text-sm">Home & Garden</span>
+                </div>
+                <span class="text-sm font-semibold">$28,940</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                  <div class="w-3 h-3 rounded-full bg-danger mr-2"></div>
+                  <span class="text-sm">Sports</span>
+                </div>
+                <span class="text-sm font-semibold">$18,233</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Orders & Top Products -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Recent Orders -->
+          <div class="glass-card p-6">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-lg font-semibold">Recent Orders</h3>
+              <button class="btn btn-sm btn-secondary">View All</button>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="table w-full">
+                <thead>
+                  <tr>
+                    <th class="text-left">Order ID</th>
+                    <th class="text-left">Customer</th>
+                    <th class="text-left">Amount</th>
+                    <th class="text-left">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="font-medium">#ORD-12345</td>
+                    <td>John Doe</td>
+                    <td class="font-semibold">$234.50</td>
+                    <td><span class="badge badge-success">Delivered</span></td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">#ORD-12344</td>
+                    <td>Jane Smith</td>
+                    <td class="font-semibold">$189.00</td>
+                    <td><span class="badge badge-primary">Shipping</span></td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">#ORD-12343</td>
+                    <td>Bob Johnson</td>
+                    <td class="font-semibold">$456.75</td>
+                    <td><span class="badge badge-warning">Processing</span></td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">#ORD-12342</td>
+                    <td>Alice Brown</td>
+                    <td class="font-semibold">$678.90</td>
+                    <td><span class="badge badge-success">Delivered</span></td>
+                  </tr>
+                  <tr>
+                    <td class="font-medium">#ORD-12341</td>
+                    <td>Charlie Wilson</td>
+                    <td class="font-semibold">$123.45</td>
+                    <td><span class="badge badge-danger">Cancelled</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Top Products -->
+          <div class="glass-card p-6">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-lg font-semibold">Top Products</h3>
+              <button class="btn btn-sm btn-secondary">View All</button>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between p-3 glass-panel rounded-lg hover:scale-[1.02] transition-transform cursor-pointer">
+                <div class="flex items-center space-x-3">
+                  <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=100" alt="Product" class="w-12 h-12 rounded-lg object-cover">
+                  <div>
+                    <p class="font-medium">Wireless Headphones</p>
+                    <p class="text-xs text-text-dark-inactive">845 sold</p>
+                  </div>
+                </div>
+                <span class="font-semibold text-success">$25,350</span>
+              </div>
+
+              <div class="flex items-center justify-between p-3 glass-panel rounded-lg hover:scale-[1.02] transition-transform cursor-pointer">
+                <div class="flex items-center space-x-3">
+                  <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=100" alt="Product" class="w-12 h-12 rounded-lg object-cover">
+                  <div>
+                    <p class="font-medium">Smart Watch</p>
+                    <p class="text-xs text-text-dark-inactive">732 sold</p>
+                  </div>
+                </div>
+                <span class="font-semibold text-success">$21,960</span>
+              </div>
+
+              <div class="flex items-center justify-between p-3 glass-panel rounded-lg hover:scale-[1.02] transition-transform cursor-pointer">
+                <div class="flex items-center space-x-3">
+                  <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?w=100" alt="Product" class="w-12 h-12 rounded-lg object-cover">
+                  <div>
+                    <p class="font-medium">Leather Bag</p>
+                    <p class="text-xs text-text-dark-inactive">621 sold</p>
+                  </div>
+                </div>
+                <span class="font-semibold text-success">$18,630</span>
+              </div>
+
+              <div class="flex items-center justify-between p-3 glass-panel rounded-lg hover:scale-[1.02] transition-transform cursor-pointer">
+                <div class="flex items-center space-x-3">
+                  <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=100" alt="Product" class="w-12 h-12 rounded-lg object-cover">
+                  <div>
+                    <p class="font-medium">Running Shoes</p>
+                    <p class="text-xs text-text-dark-inactive">589 sold</p>
+                  </div>
+                </div>
+                <span class="font-semibold text-success">$17,670</span>
+              </div>
+
+              <div class="flex items-center justify-between p-3 glass-panel rounded-lg hover:scale-[1.02] transition-transform cursor-pointer">
+                <div class="flex items-center space-x-3">
+                  <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=100" alt="Product" class="w-12 h-12 rounded-lg object-cover">
+                  <div>
+                    <p class="font-medium">Sunglasses</p>
+                    <p class="text-xs text-text-dark-inactive">467 sold</p>
+                  </div>
+                </div>
+                <span class="font-semibold text-success">$14,010</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script type="module">
+    import '/src/assets/js/main.js';
+    import { ChartTemplates } from '/src/assets/js/charts.js';
+
+    // Sales Overview Chart
+    const salesChart = ChartTemplates.lineChart('#sales-overview-chart', {
+      series: [{
+        name: 'Sales',
+        data: [45000, 52000, 38000, 65000, 73000, 58000, 89000, 75000, 95000, 82000, 115000, 124563]
+      }],
+      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    }, {
+      colors: ['#3a6df0']
+    });
+    salesChart.render();
+
+    // Revenue by Category Chart
+    const categoryChart = ChartTemplates.donutChart('#revenue-category-chart', {
+      series: [45230, 32160, 28940, 18233],
+      labels: ['Electronics', 'Fashion', 'Home & Garden', 'Sports']
+    }, {
+      colors: ['#3a6df0', '#3bf083', '#ffce45', '#ff5c5c']
+    });
+    categoryChart.render();
+  </script>
+</body>
+</html>
