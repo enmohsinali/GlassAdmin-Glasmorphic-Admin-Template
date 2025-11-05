@@ -29,7 +29,7 @@
           <span class="text-white font-bold text-3xl">G</span>
         </div>
         <h1 class="text-3xl font-bold mb-2">Create Account</h1>
-        <p class="text-text-dark-secondary text-sm">Join us and start your journey today</p>
+        <p class="text-inactive-dark text-sm">Join us and start your journey today</p>
       </div>
 
       <!-- Register Form -->
@@ -41,7 +41,7 @@
             <label class="block text-sm font-medium mb-2">First Name *</label>
             <div class="relative">
               <div class="absolute left-3 top-1/2 transform -translate-y-1/2">
-                <i class="fas fa-user text-text-dark-inactive"></i>
+                <i class="fas fa-user text-inactive-dark"></i>
               </div>
               <input
                 type="text"
@@ -57,7 +57,7 @@
             <label class="block text-sm font-medium mb-2">Last Name *</label>
             <div class="relative">
               <div class="absolute left-3 top-1/2 transform -translate-y-1/2">
-                <i class="fas fa-user text-text-dark-inactive"></i>
+                <i class="fas fa-user text-inactive-dark"></i>
               </div>
               <input
                 type="text"
@@ -75,7 +75,7 @@
           <label class="block text-sm font-medium mb-2">Email Address *</label>
           <div class="relative">
             <div class="absolute left-3 top-1/2 transform -translate-y-1/2">
-              <i class="fas fa-envelope text-text-dark-inactive"></i>
+              <i class="fas fa-envelope text-inactive-dark"></i>
             </div>
             <input
               type="email"
@@ -92,7 +92,7 @@
           <label class="block text-sm font-medium mb-2">Phone Number (Optional)</label>
           <div class="relative">
             <div class="absolute left-3 top-1/2 transform -translate-y-1/2">
-              <i class="fas fa-phone text-text-dark-inactive"></i>
+              <i class="fas fa-phone text-inactive-dark"></i>
             </div>
             <input
               type="tel"
@@ -109,7 +109,7 @@
             <label class="block text-sm font-medium mb-2">Password *</label>
             <div class="relative">
               <div class="absolute left-3 top-1/2 transform -translate-y-1/2">
-                <i class="fas fa-lock text-text-dark-inactive"></i>
+                <i class="fas fa-lock text-inactive-dark"></i>
               </div>
               <input
                 type="password"
@@ -122,20 +122,20 @@
               >
               <button
                 type="button"
-                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-text-dark-inactive hover:text-text-dark-primary transition-colors"
+                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-inactive-dark hover:text-text-dark-primary transition-colors"
                 onclick="togglePassword('passwordInput', 'toggleIcon1')"
               >
                 <i class="fas fa-eye" id="toggleIcon1"></i>
               </button>
             </div>
-            <p class="text-xs text-text-dark-inactive mt-1">Minimum 8 characters</p>
+            <p class="text-xs text-inactive-dark mt-1">Minimum 8 characters</p>
           </div>
 
           <div>
             <label class="block text-sm font-medium mb-2">Confirm Password *</label>
             <div class="relative">
               <div class="absolute left-3 top-1/2 transform -translate-y-1/2">
-                <i class="fas fa-lock text-text-dark-inactive"></i>
+                <i class="fas fa-lock text-inactive-dark"></i>
               </div>
               <input
                 type="password"
@@ -148,7 +148,7 @@
               >
               <button
                 type="button"
-                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-text-dark-inactive hover:text-text-dark-primary transition-colors"
+                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-inactive-dark hover:text-text-dark-primary transition-colors"
                 onclick="togglePassword('confirmPasswordInput', 'toggleIcon2')"
               >
                 <i class="fas fa-eye" id="toggleIcon2"></i>
@@ -160,7 +160,7 @@
         <!-- Password Strength Indicator -->
         <div id="passwordStrength" class="hidden">
           <div class="flex items-center justify-between text-xs mb-1">
-            <span class="text-text-dark-inactive">Password Strength:</span>
+            <span class="text-inactive-dark">Password Strength:</span>
             <span id="strengthText" class="font-medium">Weak</span>
           </div>
           <div class="w-full bg-glass-dark-border rounded-full h-2">
@@ -198,7 +198,7 @@
             <div class="w-full border-t border-glass-dark-border"></div>
           </div>
           <div class="relative flex justify-center text-sm">
-            <span class="px-4 glass-panel text-text-dark-secondary">Or sign up with</span>
+            <span class="px-4 glass-panel text-inactive-dark">Or sign up with</span>
           </div>
         </div>
 
@@ -217,7 +217,7 @@
 
         <!-- Sign In Link -->
         <div class="text-center pt-4">
-          <p class="text-sm text-text-dark-secondary">
+          <p class="text-sm text-inactive-dark">
             Already have an account?
             <a href="/src/pages/auth/login.html" class="text-primary-500 hover:text-primary-600 font-medium transition-colors">
               Sign in
