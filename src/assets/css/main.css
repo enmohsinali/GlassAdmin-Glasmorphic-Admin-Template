@@ -1,0 +1,496 @@
+/* Import Tailwind CSS */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+/* ===============================================
+   Base Styles - Global Reset & Typography
+   =============================================== */
+@layer base {
+  * {
+    @apply outline-none box-border;
+  }
+
+  html {
+    @apply h-full;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply h-full font-sans antialiased;
+    @apply bg-cover bg-center bg-fixed;
+    @apply text-text-dark-primary;
+    background-image: url('https://wallpapershome.com/images/wallpapers/macos-big-sur-1280x720-dark-wwdc-2020-22655.jpg');
+  }
+
+  body.light-mode {
+    @apply text-text-light-primary;
+  }
+
+  /* Light mode overlay for saturated effect */
+  body.light-mode::before {
+    content: '';
+    @apply absolute left-0 top-0 w-full h-full pointer-events-none z-0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.45) 100%);
+    backdrop-filter: saturate(3);
+    -webkit-backdrop-filter: saturate(3);
+  }
+
+  /* Glass mode overlay (can be toggled separately) */
+  body.glass-mode::before {
+    content: '';
+    @apply absolute left-0 top-0 w-full h-full pointer-events-none z-0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold;
+  }
+
+  h1 { @apply text-4xl md:text-5xl; }
+  h2 { @apply text-3xl md:text-4xl; }
+  h3 { @apply text-2xl md:text-3xl; }
+  h4 { @apply text-xl md:text-2xl; }
+  h5 { @apply text-lg md:text-xl; }
+  h6 { @apply text-base md:text-lg; }
+
+  a {
+    @apply transition-colors duration-300;
+  }
+
+  button {
+    @apply transition-all duration-300;
+  }
+}
+
+/* ===============================================
+   Custom Scrollbar Styles
+   =============================================== */
+::-webkit-scrollbar {
+  @apply w-[6px] h-[6px];
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-glass-dark-border rounded-full;
+  background: rgba(155, 155, 155, 0.4);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(155, 155, 155, 0.6);
+}
+
+body.light-mode ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* ===============================================
+   Component Layer - Reusable UI Components
+   =============================================== */
+@layer components {
+
+  /* Glass Card Component */
+  .glass-card {
+    @apply rounded-2xl border backdrop-blur-[20px] transition-all duration-300;
+    @apply bg-glass-dark-card border-glass-dark-border;
+    @apply shadow-glass;
+  }
+
+  .glass-card:hover {
+    @apply shadow-glass-lg transform scale-[1.02];
+  }
+
+  body.light-mode .glass-card {
+    @apply bg-glass-light-card border-glass-light-border;
+    @apply shadow-glass-light;
+  }
+
+  body.light-mode .glass-card:hover {
+    @apply shadow-glass-light-lg;
+  }
+
+  /* Glass Panel Component (no hover effect) */
+  .glass-panel {
+    @apply rounded-2xl border backdrop-blur-[20px];
+    @apply bg-glass-dark-card border-glass-dark-border;
+    @apply shadow-glass;
+  }
+
+  body.light-mode .glass-panel {
+    @apply bg-glass-light-card border-glass-light-border;
+    @apply shadow-glass-light;
+  }
+
+  /* Button Components */
+  .btn {
+    @apply px-6 py-2.5 rounded-full font-medium text-sm;
+    @apply transition-all duration-300 cursor-pointer;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600;
+    @apply focus:ring-primary-500 shadow-md hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border border-glass-dark-border;
+    @apply text-text-dark-secondary hover:bg-glass-dark-hover;
+  }
+
+  body.light-mode .btn-secondary {
+    @apply border-glass-light-border text-text-light-secondary;
+    @apply hover:bg-glass-light-hover;
+  }
+
+  .btn-success {
+    @apply bg-success text-white hover:bg-success-dark;
+    @apply focus:ring-success shadow-md hover:shadow-lg;
+  }
+
+  .btn-danger {
+    @apply bg-danger text-white hover:bg-danger-dark;
+    @apply focus:ring-danger shadow-md hover:shadow-lg;
+  }
+
+  .btn-warning {
+    @apply bg-warning text-gray-900 hover:bg-warning-dark;
+    @apply focus:ring-warning shadow-md hover:shadow-lg;
+  }
+
+  .btn-sm {
+    @apply px-4 py-1.5 text-xs;
+  }
+
+  .btn-lg {
+    @apply px-8 py-3 text-base;
+  }
+
+  /* Input Components */
+  .input {
+    @apply w-full px-4 py-2.5 rounded-lg border;
+    @apply bg-glass-dark-card border-glass-dark-border;
+    @apply text-text-dark-primary placeholder-text-dark-inactive;
+    @apply transition-all duration-300;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+
+  body.light-mode .input {
+    @apply bg-glass-light-card border-glass-light-border;
+    @apply text-text-light-primary placeholder-text-light-inactive;
+  }
+
+  /* Badge Components */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply bg-primary-500 text-white;
+  }
+
+  .badge-success {
+    @apply bg-success text-white;
+  }
+
+  .badge-danger {
+    @apply bg-danger text-white;
+  }
+
+  .badge-warning {
+    @apply bg-warning text-gray-900;
+  }
+
+  .badge-info {
+    @apply bg-info text-white;
+  }
+
+  /* Status Dot */
+  .status-dot {
+    @apply w-2 h-2 rounded-full;
+  }
+
+  .status-dot-success {
+    @apply bg-success;
+  }
+
+  .status-dot-danger {
+    @apply bg-danger;
+  }
+
+  .status-dot-warning {
+    @apply bg-warning;
+  }
+
+  /* Avatar */
+  .avatar {
+    @apply rounded-full object-cover border-2 border-glass-dark-border;
+  }
+
+  body.light-mode .avatar {
+    @apply border-glass-light-border;
+  }
+
+  .avatar-sm {
+    @apply w-8 h-8;
+  }
+
+  .avatar-md {
+    @apply w-10 h-10;
+  }
+
+  .avatar-lg {
+    @apply w-12 h-12;
+  }
+
+  .avatar-xl {
+    @apply w-16 h-16;
+  }
+
+  /* Navigation Links */
+  .nav-link {
+    @apply px-6 py-4 no-underline transition-all duration-300;
+    @apply text-text-dark-inactive border-b-2 border-transparent;
+    @apply hover:text-text-dark-primary hover:border-text-dark-primary;
+  }
+
+  .nav-link.active {
+    @apply text-text-dark-primary border-text-dark-primary;
+  }
+
+  body.light-mode .nav-link {
+    @apply text-text-light-inactive hover:text-text-light-primary;
+    @apply hover:border-text-light-primary;
+  }
+
+  body.light-mode .nav-link.active {
+    @apply text-text-light-primary border-text-light-primary;
+  }
+
+  /* Sidebar Menu Items */
+  .menu-item {
+    @apply flex items-center px-3 py-2.5 rounded-lg;
+    @apply text-text-dark-primary no-underline text-sm font-normal;
+    @apply transition-all duration-300;
+    @apply hover:bg-glass-dark-hover;
+  }
+
+  body.light-mode .menu-item {
+    @apply text-text-light-primary hover:bg-glass-light-hover;
+  }
+
+  /* Gradient Backgrounds */
+  .gradient-purple {
+    background: linear-gradient(135deg, #cf4af3, #e73bd7, #fd31a2);
+  }
+
+  .gradient-blue {
+    background: linear-gradient(135deg, #4a90e2, #357abd, #1e5ba8);
+  }
+
+  .gradient-orange {
+    background: linear-gradient(135deg, #ff8c51, #ff705c, #f96057);
+  }
+
+  /* Hero Gradient with Pattern */
+  .hero-gradient {
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png"),
+      linear-gradient(to right top, #cf4af3, #e73bd7, #f631bc, #fd31a2, #ff3a8b,
+      #ff4b78, #ff5e68, #ff705c, #ff8c51, #ffaa49, #ffc848, #ffe652);
+  }
+
+  /* Table Styles */
+  .table {
+    @apply w-full text-sm;
+  }
+
+  .table th {
+    @apply px-4 py-3 text-left font-semibold;
+    @apply text-text-dark-secondary uppercase tracking-wider text-xs;
+  }
+
+  .table td {
+    @apply px-4 py-3 border-t border-glass-dark-border;
+  }
+
+  body.light-mode .table th {
+    @apply text-text-light-secondary;
+  }
+
+  body.light-mode .table td {
+    @apply border-glass-light-border;
+  }
+
+  /* Modal */
+  .modal-overlay {
+    @apply fixed inset-0 z-50 flex items-center justify-center;
+    @apply bg-glass-dark-overlay backdrop-blur-sm;
+    @apply transition-opacity duration-300;
+  }
+
+  body.light-mode .modal-overlay {
+    @apply bg-glass-light-overlay;
+  }
+
+  .modal-content {
+    @apply glass-panel p-6 max-w-lg w-full mx-4;
+    @apply animate-scale-in;
+  }
+
+  /* Toast Notification Position */
+  .toast-container {
+    @apply fixed top-4 right-4 z-100;
+  }
+}
+
+/* ===============================================
+   Utility Layer - Custom Utilities
+   =============================================== */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .transition-all-300 {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .transition-all-400 {
+    @apply transition-all duration-400 ease-in-out;
+  }
+
+  .transition-all-500 {
+    @apply transition-all duration-500 ease-in-out;
+  }
+}
+
+/* ===============================================
+   Custom Form Elements
+   =============================================== */
+
+/* Custom Checkbox */
+.checkbox-wrapper input[type="checkbox"] {
+  @apply hidden;
+}
+
+.checkbox-label {
+  @apply flex items-center cursor-pointer text-sm;
+}
+
+.checkbox-label::before {
+  content: '';
+  @apply inline-block w-4 h-4 mr-2 border rounded;
+  @apply border-glass-dark-border transition-all duration-200;
+  flex-shrink: 0;
+}
+
+body.light-mode .checkbox-label::before {
+  @apply border-glass-light-border;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + .checkbox-label::before {
+  @apply bg-primary-500 border-primary-500;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M20 6L9 17l-5-5'/%3e%3c/svg%3e");
+  background-position: center;
+  background-size: 12px;
+  background-repeat: no-repeat;
+}
+
+/* Custom Radio Button */
+.radio-wrapper input[type="radio"] {
+  @apply hidden;
+}
+
+.radio-label {
+  @apply flex items-center cursor-pointer text-sm;
+}
+
+.radio-label::before {
+  content: '';
+  @apply inline-block w-4 h-4 mr-2 border rounded-full;
+  @apply border-glass-dark-border transition-all duration-200;
+  flex-shrink: 0;
+}
+
+body.light-mode .radio-label::before {
+  @apply border-glass-light-border;
+}
+
+.radio-wrapper input[type="radio"]:checked + .radio-label::before {
+  @apply border-primary-500;
+  box-shadow: inset 0 0 0 3px #fff, inset 0 0 0 8px #3a6df0;
+}
+
+/* ===============================================
+   Loading & Skeleton Styles
+   =============================================== */
+.skeleton {
+  @apply bg-glass-dark-card animate-pulse rounded;
+}
+
+body.light-mode .skeleton {
+  @apply bg-glass-light-card;
+}
+
+.spinner {
+  @apply inline-block w-6 h-6 border-2 border-t-transparent rounded-full;
+  @apply border-primary-500 animate-spin;
+}
+
+/* ===============================================
+   Search Bar with Icon
+   =============================================== */
+.search-input {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56.966 56.966' fill='%23717790c7'%3e%3cpath d='M55.146 51.887L41.588 37.786A22.926 22.926 0 0046.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 00.083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z'/%3e%3c/svg%3e");
+  background-size: 14px;
+  background-repeat: no-repeat;
+  background-position: 16px 48%;
+  @apply pl-10;
+}
+
+/* ===============================================
+   Three Dot Menu
+   =============================================== */
+.three-dot-menu {
+  @apply w-[5px] h-[5px] rounded-full;
+  background-color: rgba(249, 250, 251, 0.55);
+  box-shadow: 7px 0 0 0 rgba(249, 250, 251, 0.55), 14px 0 0 0 rgba(249, 250, 251, 0.55);
+}
+
+body.light-mode .three-dot-menu {
+  background-color: #3c3a3a;
+  box-shadow: 7px 0 0 0 #3c3a3a, 14px 0 0 0 #3c3a3a;
+}
+
+/* ===============================================
+   Menu Circles (macOS style window controls)
+   =============================================== */
+.menu-circles {
+  @apply w-[15px] h-[15px] rounded-full flex-shrink-0;
+  background-color: #f96057;
+  box-shadow: 24px 0 0 0 #f8ce52, 48px 0 0 0 #5fcf65;
+}
+
+/* ===============================================
+   Print Styles
+   =============================================== */
+@media print {
+  body::before {
+    display: none;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}

@@ -1,0 +1,204 @@
+<!--
+  GlassAdmin UI Components - Modals
+  Reusable modal/popup components
+-->
+
+<!-- Basic Modal -->
+<div id="basic-modal" class="modal-overlay invisible opacity-0">
+  <div class="modal-content">
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="text-xl font-semibold">Modal Title</h3>
+      <button class="modal-close text-text-dark-inactive hover:text-text-dark-primary transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div class="mb-6">
+      <p class="text-sm text-text-dark-secondary">This is a basic modal with glassmorphic styling. It can contain any content you need.</p>
+    </div>
+    <div class="flex justify-end space-x-3">
+      <button class="btn btn-secondary modal-close">Cancel</button>
+      <button class="btn btn-primary">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<!-- Confirmation Modal -->
+<div id="confirm-modal" class="modal-overlay invisible opacity-0">
+  <div class="modal-content max-w-md">
+    <div class="flex items-start mb-4">
+      <div class="w-12 h-12 rounded-full bg-warning bg-opacity-20 flex items-center justify-center mr-4 flex-shrink-0">
+        <svg class="w-6 h-6 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+        </svg>
+      </div>
+      <div class="flex-1">
+        <h3 class="text-lg font-semibold mb-2">Are you sure?</h3>
+        <p class="text-sm text-text-dark-secondary">This action cannot be undone. This will permanently delete your account and remove your data from our servers.</p>
+      </div>
+    </div>
+    <div class="flex justify-end space-x-3 mt-6">
+      <button class="btn btn-secondary modal-close">Cancel</button>
+      <button class="btn btn-danger">Delete</button>
+    </div>
+  </div>
+</div>
+
+<!-- Form Modal -->
+<div id="form-modal" class="modal-overlay invisible opacity-0">
+  <div class="modal-content max-w-2xl">
+    <div class="flex items-center justify-between mb-6">
+      <h3 class="text-xl font-semibold">Create New User</h3>
+      <button class="modal-close text-text-dark-inactive hover:text-text-dark-primary transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <form>
+      <div class="grid grid-cols-2 gap-4 mb-4">
+        <div>
+          <label class="block text-sm font-medium mb-2">First Name</label>
+          <input type="text" class="input" placeholder="John" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-2">Last Name</label>
+          <input type="text" class="input" placeholder="Doe" required>
+        </div>
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium mb-2">Email</label>
+        <input type="email" class="input" placeholder="john@example.com" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium mb-2">Role</label>
+        <select class="input">
+          <option>Admin</option>
+          <option>User</option>
+          <option>Manager</option>
+        </select>
+      </div>
+      <div class="mb-6">
+        <label class="checkbox-wrapper">
+          <input type="checkbox" class="checkbox">
+          <span class="checkbox-label">Send welcome email</span>
+        </label>
+      </div>
+      <div class="flex justify-end space-x-3">
+        <button type="button" class="btn btn-secondary modal-close">Cancel</button>
+        <button type="submit" class="btn btn-primary">Create User</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Success Modal -->
+<div id="success-modal" class="modal-overlay invisible opacity-0">
+  <div class="modal-content max-w-md text-center">
+    <div class="w-16 h-16 rounded-full bg-success bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+      <svg class="w-8 h-8 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+      </svg>
+    </div>
+    <h3 class="text-2xl font-semibold mb-2">Success!</h3>
+    <p class="text-text-dark-secondary mb-6">Your changes have been saved successfully.</p>
+    <button class="btn btn-primary modal-close">Continue</button>
+  </div>
+</div>
+
+<!-- Image Preview Modal -->
+<div id="image-modal" class="modal-overlay invisible opacity-0">
+  <div class="modal-content max-w-4xl p-0 overflow-hidden">
+    <div class="relative">
+      <button class="modal-close absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-glass-dark-card flex items-center justify-center hover:bg-glass-dark-hover transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+      <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200" alt="Preview" class="w-full h-auto">
+    </div>
+    <div class="p-6">
+      <h3 class="text-lg font-semibold mb-2">Image Title</h3>
+      <p class="text-sm text-text-dark-secondary">Image description and details go here.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Sidebar Modal (Drawer) -->
+<div id="sidebar-modal" class="fixed inset-y-0 right-0 z-50 w-96 transform translate-x-full transition-transform duration-300">
+  <div class="glass-panel h-full p-6 flex flex-col">
+    <div class="flex items-center justify-between mb-6">
+      <h3 class="text-xl font-semibold">Notifications</h3>
+      <button class="modal-close text-text-dark-inactive hover:text-text-dark-primary transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div class="flex-1 overflow-y-auto scrollbar-thin space-y-4">
+      <div class="glass-card p-4 cursor-pointer hover:scale-[1.02] transition-transform">
+        <div class="flex items-start">
+          <div class="w-10 h-10 rounded-full bg-primary-500 flex items-center justify-center mr-3 flex-shrink-0">
+            <span class="text-white font-semibold text-sm">JD</span>
+          </div>
+          <div class="flex-1">
+            <p class="text-sm font-medium">John Doe commented on your post</p>
+            <p class="text-xs text-text-dark-inactive mt-1">2 minutes ago</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass-card p-4 cursor-pointer hover:scale-[1.02] transition-transform">
+        <div class="flex items-start">
+          <div class="w-10 h-10 rounded-full bg-success flex items-center justify-center mr-3 flex-shrink-0">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <div class="flex-1">
+            <p class="text-sm font-medium">Your profile was updated successfully</p>
+            <p class="text-xs text-text-dark-inactive mt-1">1 hour ago</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-6">
+      <button class="btn btn-primary w-full">Mark all as read</button>
+    </div>
+  </div>
+</div>
+
+<!-- Overlay Background -->
+<div class="overlay-app fixed inset-0 bg-glass-dark-overlay backdrop-blur-sm invisible opacity-0 transition-all duration-300 z-40"></div>
+
+<!-- JavaScript to handle modals -->
+<script type="module">
+  import $ from 'jquery';
+
+  // Open modal
+  $('[data-modal]').on('click', function(e) {
+    e.preventDefault();
+    const modalId = $(this).data('modal');
+    $(`#${modalId}`).removeClass('invisible opacity-0').addClass('visible opacity-100');
+    $('.overlay-app').removeClass('invisible opacity-0').addClass('visible opacity-100');
+    $('body').addClass('overflow-hidden');
+  });
+
+  // Close modal
+  $('.modal-close, .overlay-app').on('click', function(e) {
+    if (e.target === this || $(this).hasClass('modal-close')) {
+      $('.modal-overlay').removeClass('visible opacity-100').addClass('invisible opacity-0');
+      $('.overlay-app').removeClass('visible opacity-100').addClass('invisible opacity-0');
+      $('body').removeClass('overflow-hidden');
+    }
+  });
+
+  // Close on ESC key
+  $(document).on('keydown', function(e) {
+    if (e.key === 'Escape') {
+      $('.modal-overlay').removeClass('visible opacity-100').addClass('invisible opacity-0');
+      $('.overlay-app').removeClass('visible opacity-100').addClass('invisible opacity-0');
+      $('body').removeClass('overflow-hidden');
+    }
+  });
+</script>

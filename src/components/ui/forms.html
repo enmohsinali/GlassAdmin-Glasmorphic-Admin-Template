@@ -1,0 +1,355 @@
+<!--
+  GlassAdmin UI Components - Forms
+  Reusable form components with glassmorphic styling
+-->
+
+<div class="space-y-8 p-8">
+
+  <!-- Basic Inputs -->
+  <div class="glass-card p-6">
+    <h3 class="text-lg font-semibold mb-4">Basic Inputs</h3>
+    <div class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium mb-2">Text Input</label>
+        <input type="text" class="input" placeholder="Enter text...">
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Email Input</label>
+        <input type="email" class="input" placeholder="your@email.com">
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Password Input</label>
+        <input type="password" class="input" placeholder="••••••••">
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Number Input</label>
+        <input type="number" class="input" placeholder="123">
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Date Input</label>
+        <input type="date" class="input">
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Time Input</label>
+        <input type="time" class="input">
+      </div>
+    </div>
+  </div>
+
+  <!-- Input with Icons -->
+  <div class="glass-card p-6">
+    <h3 class="text-lg font-semibold mb-4">Input with Icons</h3>
+    <div class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium mb-2">Search</label>
+        <div class="relative">
+          <input type="text" class="input search-input" placeholder="Search...">
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Email with Icon</label>
+        <div class="relative">
+          <div class="absolute left-3 top-1/2 transform -translate-y-1/2">
+            <svg class="w-5 h-5 text-text-dark-inactive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <input type="email" class="input pl-10" placeholder="your@email.com">
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Password with Icon</label>
+        <div class="relative">
+          <div class="absolute left-3 top-1/2 transform -translate-y-1/2">
+            <svg class="w-5 h-5 text-text-dark-inactive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+          </div>
+          <input type="password" class="input pl-10" placeholder="••••••••">
+          <button type="button" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-text-dark-inactive hover:text-text-dark-primary">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Textarea -->
+  <div class="glass-card p-6">
+    <h3 class="text-lg font-semibold mb-4">Textarea</h3>
+    <div class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium mb-2">Description</label>
+        <textarea class="input" rows="4" placeholder="Enter description..."></textarea>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Message (with counter)</label>
+        <textarea class="input" rows="3" maxlength="500" placeholder="Type your message..."></textarea>
+        <div class="text-xs text-text-dark-inactive text-right mt-1">0 / 500</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Select Dropdowns -->
+  <div class="glass-card p-6">
+    <h3 class="text-lg font-semibold mb-4">Select Dropdowns</h3>
+    <div class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium mb-2">Basic Select</label>
+        <select class="input">
+          <option>Select an option</option>
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Country</label>
+        <select class="input">
+          <option>Select country</option>
+          <option>United States</option>
+          <option>United Kingdom</option>
+          <option>Canada</option>
+          <option>Australia</option>
+          <option>Germany</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Multiple Select</label>
+        <select class="input" multiple size="5">
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+          <option>Option 4</option>
+          <option>Option 5</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkboxes and Radios -->
+  <div class="glass-card p-6">
+    <h3 class="text-lg font-semibold mb-4">Checkboxes & Radio Buttons</h3>
+    <div class="space-y-6">
+      <div>
+        <label class="block text-sm font-medium mb-3">Checkboxes</label>
+        <div class="space-y-2">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" checked>
+            <span class="checkbox-label">Option 1 (checked)</span>
+          </label>
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox">
+            <span class="checkbox-label">Option 2</span>
+          </label>
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox">
+            <span class="checkbox-label">Option 3</span>
+          </label>
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" disabled>
+            <span class="checkbox-label">Option 4 (disabled)</span>
+          </label>
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-3">Radio Buttons</label>
+        <div class="space-y-2">
+          <label class="radio-wrapper">
+            <input type="radio" class="radio" name="radio-group" checked>
+            <span class="radio-label">Option A (selected)</span>
+          </label>
+          <label class="radio-wrapper">
+            <input type="radio" class="radio" name="radio-group">
+            <span class="radio-label">Option B</span>
+          </label>
+          <label class="radio-wrapper">
+            <input type="radio" class="radio" name="radio-group">
+            <span class="radio-label">Option C</span>
+          </label>
+          <label class="radio-wrapper">
+            <input type="radio" class="radio" name="radio-group" disabled>
+            <span class="radio-label">Option D (disabled)</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toggle Switch -->
+  <div class="glass-card p-6">
+    <h3 class="text-lg font-semibold mb-4">Toggle Switches</h3>
+    <div class="space-y-3">
+      <label class="flex items-center justify-between cursor-pointer">
+        <span class="text-sm font-medium">Enable notifications</span>
+        <div class="relative">
+          <input type="checkbox" class="sr-only peer" checked>
+          <div class="w-11 h-6 bg-glass-dark-border rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-500"></div>
+        </div>
+      </label>
+      <label class="flex items-center justify-between cursor-pointer">
+        <span class="text-sm font-medium">Dark mode</span>
+        <div class="relative">
+          <input type="checkbox" class="sr-only peer">
+          <div class="w-11 h-6 bg-glass-dark-border rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-500"></div>
+        </div>
+      </label>
+      <label class="flex items-center justify-between cursor-pointer">
+        <span class="text-sm font-medium">Email marketing</span>
+        <div class="relative">
+          <input type="checkbox" class="sr-only peer">
+          <div class="w-11 h-6 bg-glass-dark-border rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-500"></div>
+        </div>
+      </label>
+    </div>
+  </div>
+
+  <!-- File Upload -->
+  <div class="glass-card p-6">
+    <h3 class="text-lg font-semibold mb-4">File Upload</h3>
+    <div class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium mb-2">Basic File Input</label>
+        <input type="file" class="input">
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Drag & Drop Area</label>
+        <div class="border-2 border-dashed border-glass-dark-border rounded-lg p-8 text-center hover:border-primary-500 transition-colors cursor-pointer">
+          <svg class="w-12 h-12 mx-auto mb-4 text-text-dark-inactive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+          </svg>
+          <p class="text-sm font-medium mb-1">Click to upload or drag and drop</p>
+          <p class="text-xs text-text-dark-inactive">PNG, JPG, PDF up to 10MB</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Range Slider -->
+  <div class="glass-card p-6">
+    <h3 class="text-lg font-semibold mb-4">Range Slider</h3>
+    <div class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium mb-2">Volume (50%)</label>
+        <input type="range" class="w-full" min="0" max="100" value="50">
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Price Range ($0 - $1000)</label>
+        <input type="range" class="w-full" min="0" max="1000" value="500">
+      </div>
+    </div>
+  </div>
+
+  <!-- Input Groups -->
+  <div class="glass-card p-6">
+    <h3 class="text-lg font-semibold mb-4">Input Groups</h3>
+    <div class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium mb-2">Website URL</label>
+        <div class="flex">
+          <span class="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-glass-dark-border bg-glass-dark-hover text-sm">https://</span>
+          <input type="text" class="input rounded-l-none" placeholder="www.example.com">
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Price</label>
+        <div class="flex">
+          <span class="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-glass-dark-border bg-glass-dark-hover text-sm">$</span>
+          <input type="number" class="input rounded-none" placeholder="0.00">
+          <span class="inline-flex items-center px-3 rounded-r-lg border border-l-0 border-glass-dark-border bg-glass-dark-hover text-sm">USD</span>
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Username</label>
+        <div class="flex">
+          <span class="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-glass-dark-border bg-glass-dark-hover text-sm">@</span>
+          <input type="text" class="input rounded-l-none" placeholder="username">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Validation States -->
+  <div class="glass-card p-6">
+    <h3 class="text-lg font-semibold mb-4">Validation States</h3>
+    <div class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium mb-2">Success</label>
+        <input type="text" class="input border-success" value="Valid input">
+        <p class="text-xs text-success mt-1 flex items-center">
+          <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+          Looks good!
+        </p>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Error</label>
+        <input type="email" class="input border-danger" value="invalid-email">
+        <p class="text-xs text-danger mt-1 flex items-center">
+          <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+          Please enter a valid email address
+        </p>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Warning</label>
+        <input type="text" class="input border-warning" value="Check this input">
+        <p class="text-xs text-warning mt-1 flex items-center">
+          <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+          </svg>
+          This field needs attention
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Complete Form Example -->
+  <div class="glass-card p-6">
+    <h3 class="text-lg font-semibold mb-6">Complete Registration Form</h3>
+    <form class="space-y-4">
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium mb-2">First Name *</label>
+          <input type="text" class="input" placeholder="John" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-2">Last Name *</label>
+          <input type="text" class="input" placeholder="Doe" required>
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Email Address *</label>
+        <input type="email" class="input" placeholder="john@example.com" required>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Password *</label>
+        <input type="password" class="input" placeholder="••••••••" required>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-2">Country</label>
+        <select class="input">
+          <option>Select country</option>
+          <option>United States</option>
+          <option>United Kingdom</option>
+          <option>Canada</option>
+        </select>
+      </div>
+      <div>
+        <label class="checkbox-wrapper">
+          <input type="checkbox" class="checkbox" required>
+          <span class="checkbox-label">I agree to the Terms and Conditions</span>
+        </label>
+      </div>
+      <div class="pt-4">
+        <button type="submit" class="btn btn-primary w-full">Create Account</button>
+      </div>
+    </form>
+  </div>
+
+</div>
