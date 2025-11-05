@@ -72,6 +72,7 @@
    =============================================== */
 ::-webkit-scrollbar {
   @apply w-[6px] h-[6px];
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -79,20 +80,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-glass-dark-border rounded-full;
-  background: rgba(155, 155, 155, 0.4);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(155, 155, 155, 0.6);
+  @apply rounded-full;
+  background: rgba(1, 2, 3, 0.4);
 }
 
 body.light-mode ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.15);
-}
-
-body.light-mode ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(255, 253, 253, 0.57);
 }
 
 /* ===============================================
@@ -102,34 +95,32 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
 
   /* Glass Card Component */
   .glass-card {
-    @apply rounded-2xl border backdrop-blur-[20px] transition-all duration-300;
-    @apply bg-glass-dark-card border-glass-dark-border;
-    @apply shadow-glass;
+    @apply rounded-[14px] border backdrop-blur-[20px] transition-all duration-300;
+    @apply bg-content-bg-dark border-theme-dark-bg;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   }
 
   .glass-card:hover {
-    @apply shadow-glass-lg transform scale-[1.02];
+    @apply transform scale-[1.02] bg-theme-dark-bg;
   }
 
   body.light-mode .glass-card {
-    @apply bg-glass-light-card border-glass-light-border;
-    @apply shadow-glass-light;
+    @apply bg-theme-light-bg border-border-light;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
   }
 
   body.light-mode .glass-card:hover {
-    @apply shadow-glass-light-lg;
+    @apply bg-theme-light-bg;
   }
 
-  /* Glass Panel Component (no hover effect) */
+  /* Glass Panel Component (for larger containers like sidebar, header) */
   .glass-panel {
-    @apply rounded-2xl border backdrop-blur-[20px];
-    @apply bg-glass-dark-card border-glass-dark-border;
-    @apply shadow-glass;
+    @apply border backdrop-blur-[20px];
+    @apply bg-theme-dark-bg border-border-dark;
   }
 
   body.light-mode .glass-panel {
-    @apply bg-glass-light-card border-glass-light-border;
-    @apply shadow-glass-light;
+    @apply bg-theme-light-bg border-border-light;
   }
 
   /* Button Components */
@@ -145,13 +136,13 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
   }
 
   .btn-secondary {
-    @apply bg-transparent border border-glass-dark-border;
-    @apply text-text-dark-secondary hover:bg-glass-dark-hover;
+    @apply bg-transparent border border-border-dark;
+    @apply text-text-dark-secondary hover:bg-hover-menu-dark;
   }
 
   body.light-mode .btn-secondary {
-    @apply border-glass-light-border text-text-light-secondary;
-    @apply hover:bg-glass-light-hover;
+    @apply border-border-light text-text-light-secondary;
+    @apply hover:bg-hover-menu-light;
   }
 
   .btn-success {
@@ -180,15 +171,15 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
   /* Input Components */
   .input {
     @apply w-full px-4 py-2.5 rounded-lg border;
-    @apply bg-glass-dark-card border-glass-dark-border;
-    @apply text-text-dark-primary placeholder-text-dark-inactive;
+    @apply bg-search-dark border-border-dark;
+    @apply text-text-dark-primary placeholder-inactive-dark;
     @apply transition-all duration-300;
     @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
   }
 
   body.light-mode .input {
-    @apply bg-glass-light-card border-glass-light-border;
-    @apply text-text-light-primary placeholder-text-light-inactive;
+    @apply bg-search-light border-border-light;
+    @apply text-text-light-primary placeholder-inactive-light;
   }
 
   /* Badge Components */
@@ -235,11 +226,11 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
 
   /* Avatar */
   .avatar {
-    @apply rounded-full object-cover border-2 border-glass-dark-border;
+    @apply rounded-full object-cover border-2 border-text-dark-primary;
   }
 
   body.light-mode .avatar {
-    @apply border-glass-light-border;
+    @apply border-text-light-primary;
   }
 
   .avatar-sm {
@@ -261,20 +252,22 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
   /* Navigation Links */
   .nav-link {
     @apply px-6 py-4 no-underline transition-all duration-300;
-    @apply text-text-dark-inactive border-b-2 border-transparent;
+    @apply text-inactive-dark border-b-2 border-transparent;
     @apply hover:text-text-dark-primary hover:border-text-dark-primary;
   }
 
-  .nav-link.active {
+  .nav-link.active,
+  .nav-link.is-active {
     @apply text-text-dark-primary border-text-dark-primary;
   }
 
   body.light-mode .nav-link {
-    @apply text-text-light-inactive hover:text-text-light-primary;
+    @apply text-inactive-light hover:text-text-light-primary;
     @apply hover:border-text-light-primary;
   }
 
-  body.light-mode .nav-link.active {
+  body.light-mode .nav-link.active,
+  body.light-mode .nav-link.is-active {
     @apply text-text-light-primary border-text-light-primary;
   }
 
@@ -283,11 +276,11 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
     @apply flex items-center px-3 py-2.5 rounded-lg;
     @apply text-text-dark-primary no-underline text-sm font-normal;
     @apply transition-all duration-300;
-    @apply hover:bg-glass-dark-hover;
+    @apply hover:bg-hover-menu-dark;
   }
 
   body.light-mode .menu-item {
-    @apply text-text-light-primary hover:bg-glass-light-hover;
+    @apply text-text-light-primary hover:bg-hover-menu-light;
   }
 
   /* Gradient Backgrounds */
@@ -321,7 +314,7 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
   }
 
   .table td {
-    @apply px-4 py-3 border-t border-glass-dark-border;
+    @apply px-4 py-3 border-t border-border-dark;
   }
 
   body.light-mode .table th {
@@ -329,18 +322,32 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
   }
 
   body.light-mode .table td {
-    @apply border-glass-light-border;
+    @apply border-border-light;
   }
 
   /* Modal */
   .modal-overlay {
     @apply fixed inset-0 z-50 flex items-center justify-center;
-    @apply bg-glass-dark-overlay backdrop-blur-sm;
+    @apply bg-overlay-dark backdrop-blur-sm;
     @apply transition-opacity duration-300;
   }
 
   body.light-mode .modal-overlay {
-    @apply bg-glass-light-overlay;
+    @apply bg-overlay-light;
+  }
+
+  /* Overlay for dropdowns and popups */
+  .overlay-app {
+    @apply fixed inset-0 pointer-events-all invisible opacity-0 transition-all duration-300;
+    background: rgba(36, 39, 59, 0.8);
+  }
+
+  body.light-mode .overlay-app {
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .overlay-app.visible {
+    @apply visible opacity-100;
   }
 
   .modal-content {
@@ -351,6 +358,48 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
   /* Toast Notification Position */
   .toast-container {
     @apply fixed top-4 right-4 z-100;
+  }
+
+  /* Popup Styling */
+  .pop-up {
+    @apply absolute p-8 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+    @apply overflow-y-auto rounded-md flex flex-col whitespace-normal;
+    @apply invisible opacity-0 transition-all duration-300 z-10;
+    @apply bg-popup-dark;
+    box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  body.light-mode .pop-up {
+    @apply bg-popup-light;
+  }
+
+  .pop-up.visible {
+    @apply visible opacity-100;
+  }
+
+  /* Sidebar Section Title */
+  .side-title {
+    @apply text-xs uppercase tracking-wider mb-3.5;
+    @apply text-inactive-dark;
+  }
+
+  body.light-mode .side-title {
+    @apply text-inactive-light;
+  }
+
+  /* Sidebar Component */
+  .sidebar {
+    @apply w-64 glass-panel flex-shrink-0 overflow-y-auto scrollbar-thin;
+  }
+
+  /* Content Background for inner sections */
+  .content-section {
+    @apply mt-8 flex flex-col;
+  }
+
+  .content-section-title {
+    @apply text-sm mb-3.5;
+    color: #999ba5;
   }
 }
 
@@ -373,6 +422,19 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
   .transition-all-500 {
     @apply transition-all duration-500 ease-in-out;
   }
+
+  /* Background Gradient Utilities */
+  .bg-gradient-purple {
+    background: linear-gradient(135deg, #cf4af3, #e73bd7, #fd31a2);
+  }
+
+  .bg-gradient-blue {
+    background: linear-gradient(135deg, #4a90e2, #357abd, #1e5ba8);
+  }
+
+  .bg-gradient-orange {
+    background: linear-gradient(135deg, #ff8c51, #ff705c, #f96057);
+  }
 }
 
 /* ===============================================
@@ -391,12 +453,12 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
 .checkbox-label::before {
   content: '';
   @apply inline-block w-4 h-4 mr-2 border rounded;
-  @apply border-glass-dark-border transition-all duration-200;
+  @apply border-border-dark transition-all duration-200;
   flex-shrink: 0;
 }
 
 body.light-mode .checkbox-label::before {
-  @apply border-glass-light-border;
+  @apply border-border-light;
 }
 
 .checkbox-wrapper input[type="checkbox"]:checked + .checkbox-label::before {
@@ -419,12 +481,12 @@ body.light-mode .checkbox-label::before {
 .radio-label::before {
   content: '';
   @apply inline-block w-4 h-4 mr-2 border rounded-full;
-  @apply border-glass-dark-border transition-all duration-200;
+  @apply border-border-dark transition-all duration-200;
   flex-shrink: 0;
 }
 
 body.light-mode .radio-label::before {
-  @apply border-glass-light-border;
+  @apply border-border-light;
 }
 
 .radio-wrapper input[type="radio"]:checked + .radio-label::before {
@@ -436,11 +498,11 @@ body.light-mode .radio-label::before {
    Loading & Skeleton Styles
    =============================================== */
 .skeleton {
-  @apply bg-glass-dark-card animate-pulse rounded;
+  @apply bg-content-bg-dark animate-pulse rounded;
 }
 
 body.light-mode .skeleton {
-  @apply bg-glass-light-card;
+  @apply bg-theme-light-bg;
 }
 
 .spinner {
@@ -463,7 +525,7 @@ body.light-mode .skeleton {
    Three Dot Menu
    =============================================== */
 .three-dot-menu {
-  @apply w-[5px] h-[5px] rounded-full;
+  @apply w-[5px] h-[5px] rounded-full cursor-pointer;
   background-color: rgba(249, 250, 251, 0.55);
   box-shadow: 7px 0 0 0 rgba(249, 250, 251, 0.55), 14px 0 0 0 rgba(249, 250, 251, 0.55);
 }
@@ -471,6 +533,21 @@ body.light-mode .skeleton {
 body.light-mode .three-dot-menu {
   background-color: #3c3a3a;
   box-shadow: 7px 0 0 0 #3c3a3a, 14px 0 0 0 #3c3a3a;
+}
+
+/* ===============================================
+   Notification Dot
+   =============================================== */
+.notify-dot::before {
+  content: "";
+  @apply absolute w-1.5 h-1.5 rounded-full;
+  @apply bg-primary-500 right-5 top-4;
+}
+
+.notification-number {
+  @apply absolute bg-primary-500 text-white;
+  @apply w-4 h-4 rounded-full text-[10px] flex items-center justify-center;
+  @apply -right-1.5 -top-1.5;
 }
 
 /* ===============================================

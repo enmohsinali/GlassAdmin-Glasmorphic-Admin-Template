@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lock Screen - GlassAdmin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="/src/assets/css/main.css">
+</head>
+<body class="bg-cover bg-center bg-fixed">
+
+  <!-- Video Background -->
+  <div class="video-bg fixed right-0 top-0 w-full h-full -z-10 opacity-40">
+    <video class="w-full h-full object-cover" autoplay loop muted>
+      <source src="https://assets.codepen.io/3364143/7btrrd.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Lock Screen Container -->
+  <div class="min-h-screen flex items-center justify-center p-4">
+    <div class="glass-card p-8 md:p-12 w-full max-w-md animate-scale-in">
+
+      <!-- User Info -->
+      <div class="text-center mb-8">
+        <!-- Avatar -->
+        <div class="relative inline-block mb-4">
+          <img
+            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400"
+            alt="Profile"
+            class="w-24 h-24 rounded-full border-4 border-glass-dark-border mx-auto"
+          >
+          <div class="absolute bottom-0 right-0 w-8 h-8 rounded-full bg-danger flex items-center justify-center border-2 border-glass-dark-bg">
+            <i class="fas fa-lock text-white text-sm"></i>
+          </div>
+        </div>
+
+        <!-- User Name -->
+        <h1 class="text-2xl font-bold mb-1">John Doe</h1>
+        <p class="text-text-dark-secondary text-sm">john@example.com</p>
+
+        <!-- Lock Time -->
+        <div class="mt-4 inline-flex items-center space-x-2 px-4 py-2 glass-panel rounded-full">
+          <i class="fas fa-clock text-primary-500"></i>
+          <span class="text-sm" id="lockTime"></span>
+        </div>
+      </div>
+
+      <!-- Unlock Form -->
+      <form id="unlockForm" class="space-y-6">
+
+        <!-- Password Input -->
+        <div>
+          <label class="block text-sm font-medium mb-2">Enter Password to Unlock</label>
+          <div class="relative">
+            <div class="absolute left-3 top-1/2 transform -translate-y-1/2">
+              <i class="fas fa-lock text-text-dark-inactive"></i>
+            </div>
+            <input
+              type="password"
+              id="passwordInput"
+              class="input pl-10 pr-10"
+              placeholder="Enter your password"
+              required
+              autofocus
+              aria-label="Password"
+            >
+            <button
+              type="button"
+              class="absolute right-3 top-1/2 transform -translate-y-1/2 text-text-dark-inactive hover:text-text-dark-primary transition-colors"
+              onclick="togglePassword()"
+            >
+              <i class="fas fa-eye" id="toggleIcon"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Unlock Button -->
+        <button type="submit" class="btn btn-primary w-full">
+          <i class="fas fa-unlock mr-2"></i>
+          Unlock
+        </button>
+
+        <!-- Divider -->
+        <div class="relative my-6">
+          <div class="absolute inset-0 flex items-center">
+            <div class="w-full border-t border-glass-dark-border"></div>
+          </div>
+          <div class="relative flex justify-center text-sm">
+            <span class="px-4 glass-panel text-text-dark-secondary">Or</span>
+          </div>
+        </div>
+
+        <!-- Alternative Options -->
+        <div class="space-y-3">
+          <!-- Use Biometric -->
+          <button type="button" class="btn btn-secondary w-full" onclick="useBiometric()">
+            <i class="fas fa-fingerprint mr-2"></i>
+            Use Fingerprint
+          </button>
+
+          <!-- Sign Out -->
+          <button type="button" class="btn btn-secondary w-full" onclick="signOut()">
+            <i class="fas fa-sign-out-alt mr-2"></i>
+            Sign Out
+          </button>
+        </div>
+
+        <!-- Forgot Password Link -->
+        <div class="text-center pt-4">
+          <a href="/src/pages/auth/forgot-password.html" class="text-sm text-primary-500 hover:text-primary-600 transition-colors">
+            Forgot your password?
+          </a>
+        </div>
+      </form>
+
+      <!-- Session Info -->
+      <div class="mt-8 pt-6 border-t border-glass-dark-border">
+        <div class="glass-panel p-4 rounded-lg">
+          <div class="flex items-start space-x-3">
+            <i class="fas fa-info-circle text-primary-500 text-lg mt-0.5"></i>
+            <div class="flex-1">
+              <p class="text-sm font-medium mb-1">Session Locked</p>
+              <p class="text-xs text-text-dark-secondary">
+                Your session has been locked for security. Enter your password to continue working.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Activity Log -->
+        <div class="mt-4 text-center">
+          <p class="text-xs text-text-dark-inactive">
+            Last activity: <span class="font-medium">5 minutes ago</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Theme Toggle -->
+  <button class="theme-toggle fixed bottom-6 right-6 w-12 h-12 rounded-full glass-panel shadow-glass-lg flex items-center justify-center z-50 hover:scale-110 transition-transform">
+    <svg class="w-6 h-6 fill-[#ffce45] stroke-[#ffce45]" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none">
+      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+    </svg>
+  </button>
+
+  <script type="module">
+    import '/src/assets/js/main.js';
+    import { Notify } from '/src/assets/js/notifications.js';
+
+    // Display lock time
+    function updateLockTime() {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+      document.getElementById('lockTime').textContent = `Locked at ${timeString}`;
+    }
+
+    updateLockTime();
+    setInterval(updateLockTime, 1000);
+
+    // Toggle password visibility
+    window.togglePassword = function() {
+      const passwordInput = document.getElementById('passwordInput');
+      const toggleIcon = document.getElementById('toggleIcon');
+
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleIcon.classList.remove('fa-eye');
+        toggleIcon.classList.add('fa-eye-slash');
+      } else {
+        passwordInput.type = 'password';
+        toggleIcon.classList.remove('fa-eye-slash');
+        toggleIcon.classList.add('fa-eye');
+      }
+    };
+
+    // Handle unlock form submission
+    document.getElementById('unlockForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const password = document.getElementById('passwordInput').value;
+
+      // Validate password (in real app, this would be server-side)
+      if (password.length < 4) {
+        Notify.error('Invalid password!');
+        return;
+      }
+
+      Notify.info('Unlocking...');
+
+      setTimeout(() => {
+        Notify.success('Session unlocked successfully!');
+
+        setTimeout(() => {
+          window.location.href = '/src/layouts/sidebar-layout.html';
+        }, 1000);
+      }, 1000);
+    });
+
+    // Use biometric authentication
+    window.useBiometric = function() {
+      Notify.info('Authenticating with fingerprint...');
+
+      setTimeout(() => {
+        Notify.success('Biometric authentication successful!');
+
+        setTimeout(() => {
+          window.location.href = '/src/layouts/sidebar-layout.html';
+        }, 1000);
+      }, 1500);
+    };
+
+    // Sign out function
+    window.signOut = function() {
+      if (confirm('Are you sure you want to sign out?')) {
+        Notify.info('Signing out...');
+
+        setTimeout(() => {
+          window.location.href = '/src/pages/auth/login.html';
+        }, 500);
+      }
+    };
+  </script>
+</body>
+</html>
