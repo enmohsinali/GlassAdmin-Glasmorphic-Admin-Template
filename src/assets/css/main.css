@@ -338,7 +338,7 @@ body.light-mode ::-webkit-scrollbar-thumb {
 
   /* Overlay for dropdowns and popups */
   .overlay-app {
-    @apply fixed inset-0 pointer-events-all invisible opacity-0 transition-all duration-300;
+    @apply fixed inset-0 pointer-events-auto invisible opacity-0 transition-all duration-300;
     background: rgba(36, 39, 59, 0.8);
   }
 
@@ -347,7 +347,8 @@ body.light-mode ::-webkit-scrollbar-thumb {
   }
 
   .overlay-app.visible {
-    @apply visible opacity-100;
+    visibility: visible;
+    opacity: 1;
   }
 
   .modal-content {
@@ -374,7 +375,8 @@ body.light-mode ::-webkit-scrollbar-thumb {
   }
 
   .pop-up.visible {
-    @apply visible opacity-100;
+    visibility: visible;
+    opacity: 1;
   }
 
   /* Sidebar Section Title */
